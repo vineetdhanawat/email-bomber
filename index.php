@@ -16,6 +16,12 @@
 
 	function sendRequest() {
 
+		$('errors').style.borderStyle= "solid";
+		$('errors').style.borderColor= "green";
+		$('errors').style.color="green";
+		$('errors').style.borderSize= "1px";
+		$('errors').innerHTML=  "Your Mail is processing";
+
 		new Ajax.Request("send-mail.php", {
 			   method: 'post',
 			   postBody: "emailto="+$F("emailto")+"&subject="+$F("subject")+"&emailfrom="+$F("emailfrom")+"&message="+$F("message")+"&countn="+$F("countn"),
