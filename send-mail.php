@@ -49,9 +49,10 @@
 		$headers .= "Reply-To: ".$emailfrom."\r\n";
 		$headers .= "Return-Path: ".$emailfrom."\r\n";
 		$headers .= "Content-Type: text/html";
+		$additional_parameters = "-f"." ".$emailfrom;
 		if($countn==1)
 		{
-			if (mail($emailto,$subject,$message,$headers) ) {
+			if (mail($emailto,$subject,$message,$headers,$additional_parameters) ) {
 				echo "Your Mail has been sent";
 			} else {
 				echo "Your message could not be sent at this time. Please try again.";
@@ -72,7 +73,8 @@
 				$headers .= "Reply-To: ".$emailid."\r\n";
 				$headers .= "Return-Path: ".$emailid."\r\n";
 				$headers .= "Content-Type: text/html";
-				mail($emailto,$subject,$spam,$headers);
+				$additional_parameters = "-f"." ".$emailfrom;
+				mail($emailto,$subject,$spam,$headers,$additional_parameters);
 			}
 			echo "Your Spam Mails have been sent";
 		}
