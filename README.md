@@ -7,7 +7,7 @@ Using the -f parameter in mail function hides the via server name details
 
 		$additional_parameters = "-f"." ".$emailfrom;
 		
-That also changes Received-SPF: pass to Received-SPF: softfail
+That also changes Received-SPF: pass to Received-SPF: softfail which can be fixed by setting an SPF record for the domain and enabling DKIM
 
 Reference http://stackoverflow.com/questions/8236312/how-to-remove-via-and-server-name-when-sending-mails-with-php
 
